@@ -69,7 +69,7 @@ export const Body = () => {
                 <div className="ContainerRight">
                     <div className="GridSolo">
                         <div className="rightArrow" onClick={handleClickBackButton}>
-                            <img src="./src/assets/leftarrow.png" alt="" width="30px"/>
+                            <img src="./assets/leftarrow.png" alt="" width="30px"/>
                         </div>
                         <GridItens item={toShow}></GridItens>
                     </div>
