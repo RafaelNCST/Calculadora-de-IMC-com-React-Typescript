@@ -80,7 +80,6 @@ export const BodyStyle = styled.div`
         flex: 1;
         margin-left: 40px;
         display: flex;
-        padding-bottom: 50px;
         position: relative;
 
         .Grid{
