@@ -1,6 +1,8 @@
 import { keyframes } from "styled-components"
 import { Levels } from "../../helpers/calculateIMC"
 import {GridStyled} from "./style"
+import up from "../../../assets/up.png"
+import down from "../../../assets/down.png"
 
 type Props = {
     item: Levels
@@ -10,7 +12,7 @@ export const GridItens = ({item}: Props) => {
     return (
         <GridStyled style={{backgroundColor:item.color}}>
             <div className="gridIcon">
-                <img src={item.icon === "up" ? "./assets/up.png" : "./assets/down.png"} alt="" width="35"/>
+                <img src={item.icon === "up" ? up : down} alt="" width="35"/>
             </div>
             <div className="gridTitle"> {item.title} </div>
 

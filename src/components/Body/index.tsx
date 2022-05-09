@@ -2,6 +2,7 @@ import * as Style from "./style"
 import { GridItens } from "../GridItens"
 import { useState } from "react"
 import { levels, calculateIMC, Levels } from "../../helpers/calculateIMC"
+import arrowImg from "../../../assets/leftarrow.png";
 
 export const Body = () => {
 
@@ -69,7 +70,7 @@ export const Body = () => {
                 <div className="ContainerRight">
                     <div className="GridSolo">
                         <div className="rightArrow" onClick={handleClickBackButton}>
-                            <img src="./assets/leftarrow.png" alt="" width="30px"/>
+                            <img src={arrowImg} alt="" width="30px"/>
                         </div>
                         <GridItens item={toShow}></GridItens>
                     </div>
