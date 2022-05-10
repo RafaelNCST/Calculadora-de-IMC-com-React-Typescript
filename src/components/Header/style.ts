@@ -8,7 +8,7 @@ export const HeaderStyle = styled.header`
         width: 150px;
     }
 
-    @media (max-width: 770px){
+    @media (max-width: 915px){
         padding: 0px 40px;
     }
 `

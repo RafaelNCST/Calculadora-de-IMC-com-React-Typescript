@@ -6,7 +6,7 @@ export const BodyStyle = styled.div`
     display: flex;
     color: #535e94;
 
-    @media (max-width: 770px){
+    @media (max-width: 915px){
         flex-direction: column;
         padding: 0px 40px 40px;
     }
@@ -20,7 +20,7 @@ export const containerLeft = styled.div<PropsContainerLeft>`
     flex:1;
     margin-right: 40px;
 
-    @media (max-width: 770px){
+    @media (max-width: 915px){
         margin-right: 0px;
         margin-bottom: 50px;
     }
@@ -92,26 +92,25 @@ export const containerLeft = styled.div<PropsContainerLeft>`
     }
 `
 
-export const ContainerRight = styled.div`
+type displayProps = {
+    display: string
+}
+
+export const ContainerRight = styled.div<displayProps>`
         flex: 1;
         margin-left: 40px;
         display: flex;
         position: relative;
 
-        .Grid{
+        >div:first-child{
             flex:1;
-            display: grid;
+            display: ${props => props.display};
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
 
             @media (max-width: 450px){
                 grid-template-columns: 1fr;
             }
-        }
-
-        .GridSolo{
-            flex:1;
-            display: flex;
         }
 
         .rightArrow{
@@ -133,7 +132,7 @@ export const ContainerRight = styled.div`
             }
         }
 
-        @media (max-width: 770px){
+        @media (max-width: 915px){
             margin-left: 0px;
 
             .rightArrow{

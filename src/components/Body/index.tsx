@@ -58,8 +58,8 @@ export const Body = () => {
                 <button onClick={handleClickCalculate} disabled={toShow ? true : false}>Calcular</button>
             </Style.containerLeft>
             {!toShow &&
-                <Style.ContainerRight>
-                    <div className="Grid">
+                <Style.ContainerRight display="grid">
+                    <div>
                         {levels.map((item, key) => (
                             <GridItens key={key} item={item}></GridItens>
                         ))} 
@@ -67,8 +67,8 @@ export const Body = () => {
                 </Style.ContainerRight>
             }
             {toShow &&
-                <Style.ContainerRight>
-                    <div className="GridSolo">
+                <Style.ContainerRight display="flex">
+                    <div>
                         <div className="rightArrow" onClick={handleClickBackButton}>
                             <img src={arrowImg} alt="" width="30px"/>
                         </div>
