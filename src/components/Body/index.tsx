@@ -9,7 +9,7 @@ export const Body = () => {
     const [height, setHeight] = useState<number>(0);
     const [weight, setWeight] = useState<number>(0);
     const [toShow, setToShow] = useState<Levels | null>(null);
-    const [warningOpacity, setWarningOpacity] = useState<number>(0)
+    const [warningOpacity, setWarningOpacity] = useState<0|1>(0)
 
     const handleClickCalculate = () => {
         if(height && weight){
@@ -28,7 +28,7 @@ export const Body = () => {
 
     return (
         <Style.BodyStyle>
-            <div className="containerLeft">
+            <Style.containerLeft opacity={warningOpacity}>
                 <h1>Calcule o seu IMC.</h1>
                 <p> 
                     IMC é a sigla para índice de massa corpórea, parâmetro adotado pela 
@@ -48,33 +48,33 @@ export const Body = () => {
                     type="number" 
                     placeholder="Digite o seu peso. Ex 75.3 (em KG)"
                     value={weight > 0 ? weight : ""}
-                    onChange={e => setWeight(parseFloat(e.target.value))}
+                    onChange={e => setWeight(parseFloat(e.target.value))} 
                     disabled={toShow ? true : false}
                     >
                 </input>
 
-                <div className="warningMessage" style={{opacity:warningOpacity}}> Digite Números válidos </div>
+                <div> Digite Números válidos </div>
 
                 <button onClick={handleClickCalculate} disabled={toShow ? true : false}>Calcular</button>
-            </div>
+            </Style.containerLeft>
             {!toShow &&
-                <div className="ContainerRight">
+                <Style.ContainerRight>
                     <div className="Grid">
                         {levels.map((item, key) => (
                             <GridItens key={key} item={item}></GridItens>
                         ))} 
                     </div>
-                </div>
+                </Style.ContainerRight>
             }
             {toShow &&
-                <div className="ContainerRight">
+                <Style.ContainerRight>
                     <div className="GridSolo">
                         <div className="rightArrow" onClick={handleClickBackButton}>
                             <img src={arrowImg} alt="" width="30px"/>
                         </div>
                         <GridItens item={toShow}></GridItens>
                     </div>
-                </div>
+                </Style.ContainerRight>
             }
         </Style.BodyStyle>
     )

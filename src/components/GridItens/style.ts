@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const GridStyled = styled.div`
+type props = {
+    bgColor: string
+} 
+
+export const GridStyled = styled.div<props>`
     flex: 1;
     display: flex;
     justify-content: center;
@@ -9,6 +13,7 @@ export const GridStyled = styled.div`
     padding: 20px;
     color: white;
     flex-direction: column;
+    background-color: ${props => props.bgColor};
 
     .gridIcon{
         border-radius: 50%;

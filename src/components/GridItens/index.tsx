@@ -10,7 +10,7 @@ type Props = {
 
 export const GridItens = ({item}: Props) => {
     return (
-        <GridStyled style={{backgroundColor:item.color}}>
+        <GridStyled bgColor={item.color}>
             <div className="gridIcon">
                 <img src={item.icon === "up" ? up : down} alt="" width="35"/>
             </div>
